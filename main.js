@@ -246,4 +246,6 @@ const filterAnimals = () => {
 const resetAnimals = () => {
     allAnimals = animalData;
     displayAnimals();
+    currentPage = 0;
+    updatePagination();
 }
