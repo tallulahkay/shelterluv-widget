@@ -1,0 +1,53 @@
+  <div>
+    <fieldset>
+      <legend>
+        Filters
+      </legend>
+      <label for="sex">Sex</label>
+      <select id="sex" multiple>
+        {{#each sexOptions}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+      <label for="age">Age</label>
+      <select id="age" multiple>
+        {{#each ageOptions}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+      <label for="attributes">Attributes</label>
+      <select id="attributes" multiple>
+        {{#each attributeOptions}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+      <label for="breed">Breed</label>
+      <select id="breed" multiple>
+        {{#each breedOptions}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+      <label for="size">Size Group</label>
+      <select id="size" multiple>
+        {{#each sizeOptions}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+    </fieldset>
+  </div>
+  <div>
+    TODO: SORT
+  </div>
+  <div>
+    TODO: SEARCH
+  </div>
+  <!-- List View -->
+  <div id="list-view" class="list-view">
+    <div id="animals" class="animals-container"></div>
+
+    <div class="pagination">
+      <button id="prevBtn" onclick="prevPage()">Previous</button>
+      <span class="page-info" id="pageInfo"></span>
+      <button id="nextBtn" onclick="nextPage()">Next</button>
+    </div>
+  </div>

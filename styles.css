@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.animals-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-height: 800px;
+    overflow-y: auto;
+}
+
+.animal-card {
+    width: 100%;
+    cursor: pointer;
+}
+
+.animal-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.animal-card img:hover {
+    transform: scale(1.05);
+}
+
+.animal-card h3 {
+    margin: 8px 0 0 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pagination button:hover:not(:disabled) {
+    background: #f0f0f0;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-info {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+/* Tablet (3 columns) */
+@media (max-width: 1024px) {
+    .animals-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .animal-card h3 {
+        font-size: 15px;
+    }
+}
+
+/* Small tablet / large phone (2 columns) */
+@media (max-width: 768px) {
+    .animals-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 12px;
+        max-height: 600px;
+    }
+
+    .animal-card h3 {
+        font-size: 14px;
+    }
+
+    .pagination button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .page-info {
+        font-size: 13px;
+        width: 100%;
+        margin-top: 8px;
+    }
+}
+
+/* Mobile (1 column) */
+@media (max-width: 480px) {
+    .animals-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+        max-height: none;
+    }
+
+    .animal-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .animal-card h3 {
+        font-size: 16px;
+    }
+
+    .pagination {
+        padding: 15px 10px;
+    }
+
+    .pagination button {
+        padding: 10px 16px;
+    }
+}
