@@ -40,15 +40,23 @@
         {{/each}}
       </select>
     </div>
+    <div class="filter">
+      <label for="sort">Sort</label>
+      <select id="sort">
+        <option value="">Select Value</option>
+        <option value="shortest-stay">Shortest Stay</option>
+        <option value="longest-stay">Longest Stay</option>
+        <option value="alphabetical-a-z">Alphabetical A-Z</option>
+        <option value="alphabetical-z-a">Alphabetical Z-A</option>
+      </select>
+    </div>
+    <div class="filter">
+      <label for="search-box">Search</label>
+      <input id="search-box" class="search-box" type="search" placeholder="Search By Name"
+        oninput="searchByName(event)" />
+    </div>
   </fieldset>
 </div>
-{{!-- <div>
-  TODO: SORT
-</div>
-<div>
-  TODO: SEARCH
-</div> --}}
-<!-- List View -->
 <div id="list-view" class="list-view">
   <div id="animals" class="animals-container"></div>
 

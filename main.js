@@ -66,6 +66,9 @@ const getAnimals = async () => {
         new SlimSelect({
             select: '#size'
         });
+        new SlimSelect({
+            select: '#sort'
+        })
 
         displayAnimals();
         updatePagination();
@@ -200,6 +203,7 @@ const filterAnimals = () => {
         .map(opt => opt.value);
     const selectedSize = Array.from(document.getElementById('size').selectedOptions)
         .map(opt => opt.value);
+    const selectedSort = document.getElementById('sort').value;
 
     const currentFilters = {
         sex: selectedSex,
@@ -238,6 +242,38 @@ const filterAnimals = () => {
             } else return true
         })
 
+    if (selectedSort === "alphabetical-a-z") {
+        allAnimals.sort((a, b) => {
+            const nameA = a.name.toUpperCase();
+            const nameB = b.name.toUpperCase();
+
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+            return 0;
+        });
+    } else if (selectedSort === "shortest-stay") {
+        allAnimals = allAnimals.sort((a, b) => b.intake_date - a.intake_date)
+    } else if (selectedSort === "longest-stay") {
+        allAnimals = allAnimals.sort((a, b) => a.intake_date - b.intake_date)
+    } else if (selectedSort === "alphabetical-z-a") {
+        allAnimals.sort((a, b) => {
+            const nameA = a.name.toUpperCase();
+            const nameB = b.name.toUpperCase();
+
+            if (nameA < nameB) {
+                return 1;
+            }
+            if (nameA > nameB) {
+                return -1;
+            }
+            return 0;
+        });
+    }
+
     currentPage = 0;
     displayAnimals()
     updatePagination();
@@ -245,6 +281,19 @@ const filterAnimals = () => {
 
 const resetAnimals = () => {
     allAnimals = animalData;
+    displayAnimals();
+    currentPage = 0;
+    updatePagination();
+}
+
+const searchByName = (e) => {
+    allAnimals = []
+    animalData.forEach((animal) => {
+        if (animal.name.toUpperCase().includes(e.target.value.trim().toUpperCase())) {
+            allAnimals.push(animal);
+        }
+    })
+
     displayAnimals();
     currentPage = 0;
     updatePagination();
