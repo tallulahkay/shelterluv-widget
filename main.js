@@ -20,8 +20,16 @@ const normalizePhotos = (photos) => {
 }
 
 const getAnimals = async () => {
+    // Get the query string from the current URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const animalType = urlParams.get('animalType');
+    const GID = urlParams.get('GID');
+
+    console.log(animalType)
+    console.log(GID);
+
     try {
-        const response = await fetch('https://new.shelterluv.com/api/v3/available-animals/24538?animalType=Dog');
+        const response = await fetch(`https://new.shelterluv.com/api/v3/available-animals/${GID}?animalType=${animalType}`);
 
         const data = await response.json();
         animalData = data.animals;
