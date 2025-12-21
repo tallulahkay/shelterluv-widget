@@ -25,18 +25,12 @@ const getAnimals = async () => {
     const animalType = urlParams.get('animalType');
     const GID = urlParams.get('GID');
 
-    console.log(animalType)
-    console.log(GID);
-
     try {
         const response = await fetch(`https://new.shelterluv.com/api/v3/available-animals/${GID}?animalType=${animalType}`);
 
         const data = await response.json();
         animalData = data.animals;
         allAnimals = data.animals;
-
-        console.log('Full API Response:', data);
-        console.log('Total Animals:', allAnimals.length);
 
         populateFilterOptions();
 
@@ -113,19 +107,7 @@ const displayAnimals = () => {
     container.scrollTop = 0;
 }
 
-const openAnimalDetail = (publicUrl, nid) => {
-    // Find the animal in our data for logging
-    const animal = allAnimals.find(a => a.nid === nid);
-
-    if (animal) {
-        // Log the full animal details
-        console.log('Full Animal Details:', animal);
-        console.log('Animal Name:', animal.name);
-        console.log('Animal NID:', animal.nid);
-        console.log('Unique ID:', animal.uniqueId);
-        console.log('Public URL:', publicUrl);
-    }
-
+const openAnimalDetail = (publicUrl) => {
     // Open the embed page in a new tab
     window.open(publicUrl, '_blank');
 }
