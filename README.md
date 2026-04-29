@@ -1,4 +1,4 @@
-# shelterluv-widget
+# shelterluv-animals-widget
 
 ## Embed the widget
 
@@ -29,7 +29,7 @@ Where to find your `GID` in Shelterluv:
 
 Example:
 
-`https://tallulahkay.github.io/shelterluv-widget/animals-widget.html?GID=A1234&animalType=ANIMAL_TYPE`
+`https://sheltertech.github.io/shelterluv-animals-widget/animals-widget.html?GID=A1234&animalType=ANIMAL_TYPE`
 
 ### 2) Embed with an iframe
 
@@ -37,7 +37,7 @@ Paste this on your site:
 
 ```html
 <iframe
-  src="https://tallulahkay.github.io/shelterluv-widget/animals-widget.html?GID=YOUR_GID&animalType=ANIMAL_TYPE"
+  src="https://sheltertech.github.io/shelterluv-animals-widget/animals-widget.html?GID=YOUR_GID&animalType=ANIMAL_TYPE"
   title="Adoptable animals"
   width="100%"
   height="900"
@@ -52,7 +52,7 @@ Paste this on your site:
 ```html
 <div style="max-width:1200px;margin:0 auto;">
   <iframe
-    src="https://tallulahkay.github.io/shelterluv-widget/animals-widget.html?GID=YOUR_GID&animalType=ANIMAL_TYPE"
+    src="https://sheltertech.github.io/shelterluv-animals-widget/animals-widget.html?GID=YOUR_GID&animalType=ANIMAL_TYPE"
     title="Adoptable animals"
     width="100%"
     height="900"
