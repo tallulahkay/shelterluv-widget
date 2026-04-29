@@ -13,7 +13,7 @@ This widget is hosted on GitHub Pages for this repository.
 
 Hosted URL:
 
-`https://tallulahkay.github.io/shelterluv-widget/animals-widget.html?GID=YOUR_GID&animalType=ANIMAL_TYPE`
+`https://sheltertech.github.io/shelterluv-animals-widget/animals-widget.html?GID=YOUR_GID&animalType=ANIMAL_TYPE`
 
 Replace:
 - `YOUR_GID` with your Shelterluv Group ID (example: `A1234`)
